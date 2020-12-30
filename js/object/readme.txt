@@ -1,0 +1,1 @@
+1. Mình sẽ học về object và object's properties
