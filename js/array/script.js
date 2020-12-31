@@ -71,6 +71,6 @@ var newArray = friends.toString();
 
 
 // document.getElementById('content__size').innerHTML = friends.length;
-document.getElementById('content__detail').innerHTML = "Mang hien tai: " + newArray;
+// document.getElementById('content__detail').innerHTML = "Mang hien tai: " + newArray;
 
-console.log(typeof newArray);
+// console.log(typeof newArray);
