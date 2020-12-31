@@ -1,4 +1,5 @@
-// cac kieu du lieu o day la number, string, boolean, undefined
+// Kieu du lieu nguyen thuy trong js: string, number, boolean, undefined, object, array, function
+
 
 var x = 0;
 var y = "Dang Van Nhang";
