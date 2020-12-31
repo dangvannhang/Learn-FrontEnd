@@ -1,0 +1,47 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.cards__list {
+    display: flex;
+    height: 5rem;
+    width: 100%;
+}
+
+.cards__list .card__item {
+    width: 100%;
+}
+
+.cards__list .mobile {
+    background-color: whitesmoke;
+}
+
+.cards__list .tablet {
+    background-color: wheat;
+}
+
+.cards__list .desktop {
+    background-color: violet;
+}
+
+
+/* tablet */
+
+@media only screen and (max-width: 960px) {
+    .cards__list .desktop {
+        display: none;
+    }
+}
+
+
+/* Smartphone */
+
+@media only screen and (max-width: 740px) {
+    .cards__list .desktop {
+        display: none;
+    }
+    .cards__list .tablet {
+        display: none;
+    }
+}
