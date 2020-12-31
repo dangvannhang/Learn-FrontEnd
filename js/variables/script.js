@@ -21,3 +21,20 @@ var user = {
     username: 'dangvannhang',
     password: 'abc123'
 }
+var somthing = null;
+
+// undifined
+var t;
+
+// boolean
+// true, false;
+
+// function
+var age = function showAge(age) {
+    return age;
+}
+
+// array
+var arr = ['mango', 'banana'];
+
+document.getElementById('content').innerHTML = typeof age;
