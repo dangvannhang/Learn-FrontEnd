@@ -1,0 +1,54 @@
+/* reset css */
+
+ul li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+
+/* End reset css */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.body__wrapper {
+    margin: 5% 30%;
+}
+
+.header {
+    text-align: center;
+}
+
+.calculator_position {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.result_position {
+    width: 100%;
+    height: 6rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.result_position #calculation,
+#result {
+    height: 3rem;
+}
+
+.operator_position {
+    display: flex;
+    flex-direction: column;
+}
+
+.row ul {
+    display: flex;
+    justify-content: space-between;
+}
