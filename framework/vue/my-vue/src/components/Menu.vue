@@ -1,14 +1,13 @@
 <template>
   <div >
-   
+    <h2>Day la menu</h2>
   </div>
 </template>
 
 <script>
 export default {
  
-  props: {
-  }
+ 
 }
 </script>
 
