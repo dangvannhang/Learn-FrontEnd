@@ -1,0 +1,11 @@
+- Vue js va react js kha tuong dong
++ Data = state
++ VueX = Redux
++ Vue router= router
++ Component = component
++ props
++ NPM: node package manager
+
+Cai dat Vuejs
++ Download nodejs + npm -v
++ npm install -g @vue/cli (command line interface)
