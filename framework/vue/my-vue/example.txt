@@ -1,0 +1,535 @@
+1. Value binding
+<template>
+  <div id="app">
+    {{name}}
+  </div>
+</template>
+<script>
+export default {
+    data() {
+      return {
+        name: 'dang van nhang'
+      }
+    }
+}
+</script>
+2. Property binding
+<template>
+  <div id="app">
+    <h1 v-bind:id="id">Welcome back Naha</h1>
+    // chung ta se gan cai id cho cai bien id
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      id: "header_title"
+    }
+  },
+}
+</script>
+
+
+2.1 binding value disabled
+<template>
+  <div id="app">
+    <h1 v-bind:id="id">Welcome back Naha</h1>
+    <input type="text" :disabled="inputDisable">
+   
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      id: "header_title",
+      inputDisable: false
+    }
+  },
+}
+</script>
+
+// chỗ trên có nghĩa là nếu cái in inputDisable mà false thì nó sẽ không disabled, 
+// mà nếu nó true thì nó sẽ disabled
+
+2.2 bind event
+<template>
+  <div id="app">
+    <h1 v-bind:id="id">Welcome back Naha</h1>
+    <input type="text" :disabled="inputDisable">
+    <button @click="inputDisable = ! inputDisable">Mo/Khoa</button>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      id: "header_title",
+      inputDisable: false
+    }
+  },
+}
+</script>
+
+// chỗ trên chúng ta có một button và có @click, đây chính là bắt sự kiện click
+// nếu chúng ta click vào thì nó sẽ thay đổi giá trị của inputDisable.
+ 
+2.3  binding class
+
+<template>
+  <div id="app">
+    <h1 :class="{daChon: selected}">Welcome back Naha</h1>
+
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      selected: true
+    }
+  },
+}
+</script>
+
+<style>
+.daChon{
+  color: red;
+}
+</style>
+
+// ở đây giá trị của class daChon sẽ phụ thuộc vào giá trị của selected, 
+// nếu selected là true thì element sẽ có class là daChon
+// selected: true thì sẽ có màu đỏ, nếu ngược lại thì sẽ có màu đen
+
+
+
+2.4
+<template>
+  <div id="app">
+    <h1 :class="{daChon: selected}">Welcome back Naha</h1>
+    <button @click="selected = ! selected">Doi mau</button>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      selected: true
+    }
+  },
+}
+</script>
+
+<style>
+.daChon{
+  color: red;
+}
+</style>
+// có nghĩa là class daChon sẽ phụ thuộc vào biến selected
+// chỗ trên chúng ta có một button, nó giúp chúng ta bắt sự kiện và sẽ đổi giá trị của selected
+
+3. Model binding
+
+<template>
+  <div id="app">
+    <input type="text" v-model="name">
+    <h1>{{name}}</h1>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      name: "dang van Nhagn"
+    }
+  },
+}
+</script>
+
+// day la vi du thich hop nhat cho model
+// dau tien cai o input no se co value mac dinh la gia tri cua bien name va cai h1 cung hien thi ra gia tri cua bien name
+// nhung khi ta thay doi gia tri cua input thi gia tri cua bien name cung thay doi theo 
+
+
+3.1 model binding and array
+
+<template>
+  <div id="app">
+    <input type="text" v-model="names[1]">
+    <h1>{{names}}</h1>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      names: [
+        'dang van nhang',
+        'huynh huu duc'
+      ]
+    }
+  },
+}
+</script>
+
+3.2
+
+<template>
+  <div id="app">
+    <input type="text" v-model="channel.name">
+    <h1>{{channel.name}}</h1>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      channel: {
+        name: 'duc',
+      }
+    }
+  },
+}
+</script>
+
+// cho cai bien thi chung ta cung co the cho no la mot cai object hay la mang gi cung duoc
+
+
+4. event handling
+
+<template>
+  <div id="app">
+   <button v-on:click=" color='black' ">click</button>
+    <h2>{{color}}</h2>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      color:"red"
+    }
+  },
+}
+</script>
+
+// nghia la khi chung ta click vao cai btn thi no se doi gia tri cua bien
+
+
+4.1 
+<template>
+  <div id="app">
+    <input type="text" v-model="color">
+   <button @click=" color='yellow' ">click</button>
+ 
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      color:"red"
+    }
+  },
+}
+</script>
+
+// chung ta co the viet tat su kien thanh @action= "";
+// @click="";
+
+4.2 prevent default event
+
+<template>
+  <div id="app">
+    <form action="/ab" v-on:submit.prevent="doSomething()">
+      <input type="text" v-model="color">
+      <button type="submit" @click.prevent=" color='yellow' ">click</button>
+    </form>
+ 
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      color:"red"
+    }
+  },
+}
+</script>
+
+// neu ma co prevent thi form se khong submit duoc luon
+
+9. ref:
+
+<template>
+  <div id="app">
+    <form action="/ab" >
+      <input type="text" v-model="color" ref="channelName">
+      <button type="submit" @click.prevent=" color='yellow' ">click</button>
+    </form>
+ 
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      color:"red"
+    }
+  },
+
+  // this.$refs.channelName => tra ve chinh element co ref="channelName" // no giong nhu id vay do
+}
+</script>
+
+// muc dich chinh cua ref la giup chung ta co the lua chon phan tu DOM bang gia tri ben trong refs
+// this.$refs.input
+
+
+10. conditional rendering (v-show)
+
+<template>
+  <div id="app">
+    <h1 v-show="isShow">Welcome back Naha</h1>
+    <button v-on:click="isShow=!isShow"></button>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      isShow: true
+    }
+  },
+
+}
+</script>
+
+// o day v-show giup chung ta xac dinh thanh phan do co duoc hien thi len man hinh hay khong
+// button la giup chung ta thay doi gia tri cua bien isShow de cho v-show biet co hien thi hay khong
+// v-show la se cho cai element do display:none
+
+
+10.1 v-if
+
+<template>
+  <div id="app">
+    <h1 v-show="isShow">Welcome back Naha</h1>
+    <button v-on:click="isShow=!isShow">An/Hien</button>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      isShow: true
+    }
+  },
+
+}
+</script>
+
+// v-if: la se cho cai element do bien mat luon
+
+10.2 // v-show cho an/hien button theo yeu cau
+
+<template>
+  <div id="app">
+    <h1 v-if="isShow">Welcome back Naha</h1>
+    <button v-on:click="isShow=!isShow">
+      <span v-show="isShow">An</span>
+      <span v-show="!isShow">Hien</span> 
+    </button>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      isShow: true
+    }
+  },
+
+}
+</script>
+
+
+// chỗ cái btn thì sẽ bắt cái event là click và nó sẽ thay đổi cái giá trị của biến isShow
+// bên trong nó có hai cái span và nó sẽ hiện/ẩn theo giá trị của biến isShow
+// tại sao cả hai cái lại có v-show. chúng ta muốn khi mà click vào một cái thì cái giá trị hiển thị của nó cũng thay đổi
+// hai cái sẽ có giá trị ngược nhau, khi mà click button thì nó sẽ thay đổi giá trị của biến từ true/false thì sẽ có một cái hiện/ẩn
+
+10.3 v-if, v-else de an/hien btn
+
+<template>
+  <div id="app">
+    <h1 v-if="isShow">Welcome back Naha</h1>
+    <button v-on:click="isShow=!isShow">
+      <span v-if="isShow">An</span>
+      <span v-else>Hien</span> 
+    </button>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      isShow: true
+    }
+  },
+
+}
+</script>
+
+// thay vi cai cu chuoi o tren thi chung ta co the dung if/else de no hien thi
+// doi khi chung ta dung v-if thi se khong bat duoc su kien cua no
+
+
+11. list rendering (v-for)
+
+<template>
+  <div id="app">
+    <h2 v-for="(task,index) in tasks" :key="index">
+      {{task}}
+    </h2>
+  </div>
+</template>
+
+
+<script>
+
+export default {
+
+  data() {
+    return {
+      tasks:[
+        'watching films',
+        'Reading books',
+        'Playing game'
+      ]
+    }
+  },
+
+}
+</script>
+
+// phần này có nghĩa là nó sẽ lặp qua từng cái task trong cái task và có một cái index cua cac phan tu trong mảng tasks
+
+11.1 todo list don gian voi v-for
+
+<template>
+  <div id="app">
+    <h2 v-for="(task,index) in tasks" :key="index">
+      <input type="checkbox" v-model="task.done" >
+      <span :class="{isFinished: task.done} ">
+        {{task.content}}
+      </span>
+    </h2>
+  </div>
+</template>
+<script>
+
+export default {
+  data() {
+    return {
+      tasks:[
+        {
+          content:'watching films',
+          done:false
+          },
+        {
+          content:'Reading books',
+          done:false
+          },
+        {
+          content:'Playing game',
+          done:false
+          },
+      ]
+    }
+  },
+
+}
+</script>
+<style>
+.isFinished{
+  text-decoration-line: line-through;
+}
+</style>
+
+
+// Tới phần này là bắt đầu hơi choáng rồi đấy,
+// Ta thấy rằng ở trên có một cái thẻ div chứa v-for: nó sẽ giúp chúng ta lặp từng task trong tasks và sẽ có index cho mỗi cái phần tử task trong mảng tasks
+// 
+
+
+
+
+
