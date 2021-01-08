@@ -9,3 +9,8 @@
 Cai dat Vuejs
 + Download nodejs + npm -v
 + npm install -g @vue/cli (command line interface)
++ xong roi thi co the check vue --version (check version cua cli)
++ vue create my-vue-app
+
++ Cho cai xong thi chuyen cmd vao folder bang cach: cd my-vue-app
++ Xong roi run: npm run serve
