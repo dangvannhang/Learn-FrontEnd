@@ -527,7 +527,11 @@ export default {
 
 // Tới phần này là bắt đầu hơi choáng rồi đấy,
 // Ta thấy rằng ở trên có một cái thẻ div chứa v-for: nó sẽ giúp chúng ta lặp từng task trong tasks và sẽ có index cho mỗi cái phần tử task trong mảng tasks
-// 
+// Chỗ vòng lặp thì sẽ có lặp cái checkbox(để check dữ liệu) và thẻ span(để in ra nội dung và sẽ css cho nó)
+// khi mà chúng ta click và cái checkbox thì nó sẽ thay đổi giá trị bởi v-model và giá trị của nó sẽ thành true/false
+
+
+
 
 
 
