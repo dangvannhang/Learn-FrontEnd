@@ -92,4 +92,5 @@
   - day du lieu tu component cha => sang component con
   - Lam sao khai bao cai object cua cha sang con
     + dung mang ten cac props
-    + 
+17. filter
+  - bo loc
