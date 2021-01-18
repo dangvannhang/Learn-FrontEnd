@@ -532,7 +532,136 @@ export default {
 
 
 
+######################## ###########################
+<template>
+  <div id="app">
 
+
+    <input type="text" v-model="newTask">
+
+    <button @click="addTask()">Them</button>
+
+    <div v-for="(task,index) in tasks" :key="index">
+      
+      <input type="checkbox" v-model="task.done" >
+      <span :class="{isFinished: task.done} ">
+        {{task.content}}
+      </span>
+    </div>
+
+
+  </div>
+</template>
+<script>
+
+export default {
+  data() {
+    return {
+
+      newTask:'',
+      tasks:[
+        
+      ]
+    }
+  },
+  mounted() {
+    // goi API
+  },
+  methods: {
+    addTask: function() {
+      this.tasks.push({
+        content:this.newTask,
+        done:false
+      });
+    }
+  }, 
+  // cu khi nao cai newtask(26) thay doi thi cai ham duoi day se duoc thuc hien
+  watch: {
+    newTask: function(newValue,oldValue) {
+      console.log(oldValue);
+      console.log(newValue);
+    }
+  }
+
+}
+</script>
+<style>
+.isFinished{
+  text-decoration-line: line-through;
+}
+</style>
+
+// Day la toan bo code cho todo list
+
+
+15. components
+
+16. props
+
+<template>
+  <div id="app">
+
+<Task v-for="(task, index) in tasks" :key="index" :taskData="task"/>
+
+  </div>
+</template>
+<script>
+import Task from './components/TaskComponent.vue';
+export default {
+  data() {
+    return {
+      tasks: [
+        {
+          content: 'di cho', done: false
+        },
+        {
+          content: 'hoc bai', done: false
+        },
+        {
+          content: 'nau an', done: false
+        },
+        {
+          content: 'viet code', done: false
+        },
+        {
+          content: 'run code', done: false
+        },
+        {
+          content: 'test code', done: false
+        },
+
+      ]
+    }
+  },
+  components: {
+    Task,
+
+  }
+
+}
+</script>
+
+<template>
+  <div class="task">
+    <span>{{taskData.content}}</span>
+  </div>
+</template>
+<script>
+export default {  
+  props: [
+    'taskData',
+  ],
+  data() {
+    return {
+      content:'test',
+    }
+  } 
+}
+</script>
+
+// day la cach truyen props tu cha san con
+
+16.1
 
 
 

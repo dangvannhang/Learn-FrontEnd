@@ -60,7 +60,7 @@
 
 9. ref:
   - Ánh xạ đến chính element
-  - <h1 ref="h1">Hello</h1>
+  - <hh11 ref="h1">Hello</h11>
   - this.$refs.h1
 
 10. Conditional rendering
@@ -75,6 +75,21 @@
 11. List rendering
   - v-for
   
+12. Methods
+  - Ham cua vue object
+
+13. watch
+  - theo doi su thay doi cua data
+
+14. Hooks:
+  - mounted
 
 
+15. components
+  - 
 
+16. Props
+  - day du lieu tu component cha => sang component con
+  - Lam sao khai bao cai object cua cha sang con
+    + dung mang ten cac props
+    + 
