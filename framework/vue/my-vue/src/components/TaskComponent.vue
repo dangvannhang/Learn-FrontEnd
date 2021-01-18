@@ -5,9 +5,10 @@
 </template>
 <script>
 export default {  
-  props: [
-    'taskData',
-  ],
+  props: {
+    taskData:Object,
+    
+  },
   data() {
     return {
       content:'test',
